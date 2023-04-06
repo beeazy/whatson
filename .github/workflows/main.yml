@@ -1,8 +1,11 @@
 name: Daily Node.js App
 on:
+  pull_request:
+    branches:    
+      - main
   schedule:
 #  - cron: '0 0 * * *'   # Runs everyday at midnight
-  - cron: '*/10 * * * *'
+    - cron: '*/10 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,3 +21,9 @@ jobs:
       run: node index.js
     - name: Start server
       run: node server.js
+    # Trigger deploy webhook
+
+    - name: Deploy
+      uses: beeazy/whatson@v1.0.0
+      with:
+        webhook_url: "https://api.render.com/deploy/srv-cgn8en7dvk4k010hvb4g?key=plTdXCsfPT0"
