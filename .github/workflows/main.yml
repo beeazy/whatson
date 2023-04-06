@@ -1,11 +1,8 @@
 name: Run Daily to Trigger Deployment
 on:
-  pull_request:
-    branches:    
-      - main
   schedule:
 #  - cron: '0 0 * * *'   # Runs everyday at midnight
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
