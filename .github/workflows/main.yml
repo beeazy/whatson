@@ -1,4 +1,4 @@
-name: Daily Node.js App
+name: Run Daily to Trigger Deployment
 on:
   pull_request:
     branches:    
@@ -19,11 +19,11 @@ jobs:
       run: npm install
     - name: Run app
       run: node index.js
-    - name: Start server
-      run: node server.js
     # Trigger deploy webhook
 
-    # - name: Deploy
-    #   uses: beeazy/whatson@v1.0.0
-    #   with:
-    #     webhook_url: "https://api.render.com/deploy/srv-cgn8en7dvk4k010hvb4g?key=plTdXCsfPT0"
+    - name: HTTP Request Action
+      uses: fjogeleit/http-request-action@v1.14.0
+      with:
+        url: "https://api.render.com/deploy/srv-cgn8en7dvk4k010hvb4g?key=plTdXCsfPT0"
+        method: POST
+
