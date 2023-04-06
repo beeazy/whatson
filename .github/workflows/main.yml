@@ -1,8 +1,7 @@
 name: Daily Node.js App
 on:
   schedule:
-#     - cron: '0 0 * * *'   # Runs everyday at midnight
-  - cron: '*/10 * * * *'
+  - cron: '0 0 * * *'   # Runs everyday at midnight
 jobs:
   build:
     runs-on: ubuntu-latest
