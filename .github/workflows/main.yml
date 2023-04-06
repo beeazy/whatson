@@ -1,7 +1,8 @@
 name: Run Daily to Trigger Deployment
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: '0 7 * * *'   # 7 utc 10 eat
+    # - cron: "*/5 * * * *"
   pull_request:
     branches:
       - main
