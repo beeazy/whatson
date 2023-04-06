@@ -23,7 +23,7 @@ jobs:
       run: node server.js
     # Trigger deploy webhook
 
-    - name: Deploy
-      uses: beeazy/whatson@v1.0.0
-      with:
-        webhook_url: "https://api.render.com/deploy/srv-cgn8en7dvk4k010hvb4g?key=plTdXCsfPT0"
+    # - name: Deploy
+    #   uses: beeazy/whatson@v1.0.0
+    #   with:
+    #     webhook_url: "https://api.render.com/deploy/srv-cgn8en7dvk4k010hvb4g?key=plTdXCsfPT0"
