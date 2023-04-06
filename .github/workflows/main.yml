@@ -24,5 +24,5 @@ jobs:
       - name: HTTP Request Action
         uses: fjogeleit/http-request-action@v1.14.0
         with:
-          url: "https://api.render.com/deploy/srv-cgn8en7dvk4k010hvb4g?key=plTdXCsfPT0"
+          url: ${{ secrets.WEB_HOOK }}
           method: POST
