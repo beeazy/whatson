@@ -14,10 +14,12 @@ async function getAllEvents(outputFilename) {
   $('td a[href^="PICS/"]').each((i, el) => {
     const $anchor = $(el);
     const src = 'https://whats-on-nairobi.com/'+$anchor.attr('href');
+    const location = $anchor.find('font').first().text().trim()
     const description = $anchor.find('font').last().text().trim();
 
+
     if (description) {
-      imageData.push({ src, description });
+      imageData.push({ src, description, location });
     }
   });
 
