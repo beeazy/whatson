@@ -14,8 +14,8 @@ async function getAllEvents(outputFilename) {
   $('td a[href^="PICS/"]').each((i, el) => {
     const $anchor = $(el);
     const src = 'https://whats-on-nairobi.com/'+$anchor.attr('href');
-    const location = $anchor.find('font').first().text().trim()
-    const description = $anchor.find('font').last().text().trim();
+    const location = $anchor.find('font').first().text().trim().replace(/[\r\n\t]/g, '');
+    const description = $anchor.find('font').last().text().trim().replace(/[\r\n\t]/g, '');
 
 
     if (description) {
